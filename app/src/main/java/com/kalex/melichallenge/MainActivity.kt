@@ -11,6 +11,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.kalex.melichallenge.navigation.RootNavigationGraph
+import com.kalex.melichallenge.navigation.Router
 import com.kalex.melichallenge.ui.theme.MeliChallengeTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,21 +22,12 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MeliChallengeTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                val rootController = rememberNavController()
+                RootNavigationGraph(
+                    rootNavController = rootController,
+                    startDestination = Router.SEARCH_MAIN_SCREEN
+                )
             }
         }
     }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
 }

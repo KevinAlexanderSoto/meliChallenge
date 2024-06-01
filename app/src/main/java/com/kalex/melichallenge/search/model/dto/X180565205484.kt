@@ -1,7 +1,7 @@
 package com.kalex.melichallenge.search.model.dto
 
 data class X180565205484(
-    val attributes: List<AttributeXXX>,
+    val attributes: List<Any>,
     val name: String,
     val pictures_qty: Int,
     val price: Int,

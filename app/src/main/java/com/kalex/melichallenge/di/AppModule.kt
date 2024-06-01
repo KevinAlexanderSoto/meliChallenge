@@ -1,6 +1,8 @@
 package com.kalex.melichallenge.di
 
 import com.kalex.melichallenge.search.model.SearchAPI
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -17,6 +19,10 @@ val appModule = module {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(SearchAPI::class.java)
+    }
+
+    single {
+        Dispatchers.IO
     }
 
 }

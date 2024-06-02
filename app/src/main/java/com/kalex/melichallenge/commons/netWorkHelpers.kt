@@ -1,6 +1,7 @@
 package com.kalex.melichallenge.commons
 
 
+import android.util.Log
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 import java.net.UnknownHostException
@@ -25,25 +26,8 @@ fun <T> makeNetworkCallHandler(
         }
         emit(FlowStatus.Error(errorMessage))
     } catch (e: Exception) {
-
+        Log.e("KALEX", e.toString())
         emit(FlowStatus.Error(ErrorType.UNKNOWN_ERROR))
     }
 }
 
-enum class ErrorType {
-    INTERNET_ERROR,
-    AUTHENTICATION_ERROR,
-    UNKNOWN_ERROR,
-}
-
-sealed class ViewModelUiState<T> {
-    data class Success<T>(val data: T) : ViewModelUiState<T>()
-    data class Loading<T>(val isLoading: Boolean) : ViewModelUiState<T>()
-    data class Error<T>(val exception: ErrorType) : ViewModelUiState<T>()
-}
-
-sealed class FlowStatus<T> {
-    data class Success<T>(val data: T) : FlowStatus<T>()
-    data class Error<T>(val exception: ErrorType) : FlowStatus<T>()
-    data class Loading<T>(val message: String) : FlowStatus<T>()
-}

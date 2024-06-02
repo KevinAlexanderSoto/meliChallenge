@@ -1,8 +1,12 @@
 package com.kalex.melichallenge.search.di
 
-import android.system.Os.bind
 import com.kalex.melichallenge.search.domain.GetSearchProductUseCase
+import com.kalex.melichallenge.search.domain.GetSearchProductUseCaseImpl
 import com.kalex.melichallenge.search.model.repository.SearchRepository
+import com.kalex.melichallenge.search.model.repository.SearchRepositoryImpl
+import com.kalex.melichallenge.search.presentation.SearchViewModel
+import org.koin.androidx.viewmodel.dsl.viewModelOf
+import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.factoryOf
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
@@ -15,4 +19,5 @@ val searchModule = module {
 
     singleOf(::SearchRepositoryImpl){ bind<SearchRepository>() }
     factoryOf(::GetSearchProductUseCaseImpl){ bind<GetSearchProductUseCase>() }
+    viewModelOf(::SearchViewModel)
 }

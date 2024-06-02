@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">meliChallenge</string>
+    <string name="search_result_empty">No fue posible encontrar coincidencias</string>
 </resources>

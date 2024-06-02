@@ -21,7 +21,7 @@ data class Result(
     val order_backend: Int,
     val original_price: Any,
     val permalink: String,
-    val price: Int,
+    val price: Double,
     val promotions: List<Any>,
     val sale_price: Any,
     val seller: Seller,

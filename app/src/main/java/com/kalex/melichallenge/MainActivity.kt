@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
                 val rootController = rememberNavController()
                 RootNavigationGraph(
                     rootNavController = rootController,
-                    startDestination = Router.SEARCH_MAIN_SCREEN
+                    startDestination = Router.SEARCH_GRAPH
                 )
             }
         }

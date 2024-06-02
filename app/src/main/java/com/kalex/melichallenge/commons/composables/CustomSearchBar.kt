@@ -60,10 +60,9 @@ fun KalexSearchBar(
     Row(
         modifier = Modifier
             .height(height)
-            .fillMaxWidth()
+            .fillMaxWidth(0.8f)
             .shadow(elevation = elevation, shape = cornerShape)
-            .background(color = backgroundColor, shape = cornerShape)
-            .clickable { onSearchClicked() },
+            .background(color = backgroundColor, shape = cornerShape),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         BasicTextField(

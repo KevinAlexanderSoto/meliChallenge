@@ -10,11 +10,11 @@ data class Result(
     val category_id: String,
     val condition: String,
     val currency_id: String,
-    val differential_pricing: DifferentialPricing,
+    val differential_pricing: DifferentialPricing?,
     val discounts: Any,
     val domain_id: String,
     val id: String,
-    val installments: Installments,
+    val installments: Installments?,
     val inventory_id: Any?,
     val listing_type_id: String,
     val official_store_id: Any,
@@ -24,8 +24,8 @@ data class Result(
     val price: Double,
     val promotions: List<Any>,
     val sale_price: Any,
-    val seller: Seller,
-    val shipping: Shipping,
+    val seller: Seller?,
+    val shipping: Shipping?,
     val site_id: String,
     val stop_time: String,
     val thumbnail: String,
@@ -34,6 +34,6 @@ data class Result(
     val use_thumbnail_id: Boolean,
     val variation_filters: List<String>,
     val variation_id: String,
-    val variations_data: VariationsData,
-    val winner_item_id: Any
+    val variations_data: VariationsData?,
+    val winner_item_id: Any?
 )

@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">meliChallenge</string>
     <string name="search_result_empty">No fue posible encontrar coincidencias</string>
+    <string name="search_result_internet_error">Ups… no tienes conexion intentalo de nuevo</string>
+    <string name="search_result_unknown_error">Algo raro paso, intentalo otra vez</string>
+    <string name="search_result_topBar_title">Busqueda</string>
 </resources>

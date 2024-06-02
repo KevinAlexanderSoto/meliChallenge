@@ -10,6 +10,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
@@ -36,7 +37,7 @@ class SearchViewModel(
     val searchText = _searchText.asStateFlow()
     fun searchProduct(query: String = " ") {
         viewModelScope.launch(dispatcher) {
-            searchRepository.searchItem(query).collect { state ->
+            searchRepository.searchItem(query).collectLatest { state ->
                 when (state) {
                     is FlowStatus.Error -> _searchState.update { ViewModelUiState.Error(state.exception) }
                     is FlowStatus.Loading -> _searchState.update { ViewModelUiState.Loading(true) }
@@ -57,11 +58,5 @@ class SearchViewModel(
         _searchText.value = text
     }
 
-    fun onToggleSearch() {
-        _isSearching.value = !_isSearching.value
-        if (!_isSearching.value) {
-            onSearchTextChange("")
-        }
-    }
 
 }

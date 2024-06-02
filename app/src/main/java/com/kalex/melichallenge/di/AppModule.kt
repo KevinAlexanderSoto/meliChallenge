@@ -1,8 +1,13 @@
 package com.kalex.melichallenge.di
 
+import com.kalex.melichallenge.MainActivity
+import com.kalex.melichallenge.commons.FormatCurrencyUseCase
+import com.kalex.melichallenge.navigation.NavigationViewModel
 import com.kalex.melichallenge.search.model.SearchAPI
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import org.koin.androidx.viewmodel.dsl.viewModelOf
+import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -23,6 +28,10 @@ val appModule = module {
 
     single {
         Dispatchers.IO
+    }
+    viewModelOf(::NavigationViewModel)
+    scope<MainActivity>() {
+        scoped { NavigationViewModel() }
     }
 
 }

@@ -8,6 +8,7 @@ object Router {
     const val SEARCH_MAIN_SCREEN = "search_main_screen"
     const val SEARCH_RESULT_SCREEN = "search_result_screen"
     const val SEARCH_RESULT_SCREEN_PARAM = "search_result_screen/{query}"
+
     const val PRODUCTS_GRAPH = "products_graph"
     const val PRODUCT_DETAIL_SCREEN = "product_detail_screen"
 }

@@ -39,7 +39,15 @@ fun NavGraphBuilder.searchNavigationGraph(rootNavController: NavHostController) 
             val parentEntry =
                 remember(entry) { rootNavController.getBackStackEntry(Router.SEARCH_RESULT_SCREEN_PARAM) }
             val query = parentEntry.arguments?.getString("query") ?: " "
-            SearchResultScreen(query, onGoToDetail = {})
+            SearchResultScreen(
+                query,
+                onGoToDetail = {
+                               rootNavController.navigate(Router.PRODUCTS_GRAPH)
+                },
+                onBackNavigation = {
+                    rootNavController.navigateUp()
+                }
+            )
         }
     }
 }

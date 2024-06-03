@@ -37,6 +37,7 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.kalex.melichallenge.R
 import com.kalex.melichallenge.commons.FormatCurrencyUseCase
+import com.kalex.melichallenge.commons.composables.KalexErrorScreen
 import com.kalex.melichallenge.navigation.NavigationViewModel
 import com.kalex.melichallenge.search.model.dto.Attribute
 import com.kalex.melichallenge.search.model.dto.Result
@@ -86,6 +87,8 @@ fun ProductDetailScreen(
         ) {
             if (product != null) {
                 Product(product)
+            }else {
+                KalexErrorScreen(rationaleText = R.string.search_result_unknown_error)
             }
         }
     }

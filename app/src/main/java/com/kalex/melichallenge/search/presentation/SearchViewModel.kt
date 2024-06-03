@@ -21,7 +21,7 @@ import kotlinx.coroutines.launch
  * **/
 class SearchViewModel(
     private val searchRepository: SearchRepository,
-    val dispatcher: CoroutineDispatcher
+    private val dispatcher: CoroutineDispatcher
 ) : ViewModel() {
 
     private val _searchState = MutableStateFlow<ViewModelUiState<List<Result>>>(

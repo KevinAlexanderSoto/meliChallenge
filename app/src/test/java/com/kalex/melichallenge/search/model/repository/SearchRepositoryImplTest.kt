@@ -40,7 +40,7 @@ class SearchRepositoryImplTest {
     }
 
     @Test
-    fun `successful Search Api call`() = runBlocking {
+    fun `successful Search Api call show return mockResult and success state`() = runBlocking {
 
         coEvery {  mockSearchAPI.searchItem("test_query") } returns mockSearchResponse
 

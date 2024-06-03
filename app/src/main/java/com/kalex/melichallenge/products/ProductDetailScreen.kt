@@ -130,7 +130,7 @@ fun Product(product: Result) {
                 fontSize = 16.sp,
             )
             Text(
-                text = product.condition,
+                text = product.condition ?: " ",
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )
@@ -188,7 +188,7 @@ fun Product(product: Result) {
                         ) {
                             Text(
                                 overflow = TextOverflow.Ellipsis,
-                                text = attribute.value_name
+                                text = attribute.value_name ?: " "
                             )
                         }
                     }

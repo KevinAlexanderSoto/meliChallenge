@@ -40,8 +40,8 @@ import com.kalex.melichallenge.commons.FormatCurrencyUseCase
 import com.kalex.melichallenge.navigation.NavigationViewModel
 import com.kalex.melichallenge.search.model.dto.Attribute
 import com.kalex.melichallenge.search.model.dto.Result
-import com.kalex.melichallenge.ui.theme.App_green
 import com.kalex.melichallenge.ui.theme.MeliChallengeTheme
+import com.kalex.melichallenge.ui.theme.Tertiary
 import org.koin.androidx.compose.koinViewModel
 
 /**
@@ -148,7 +148,7 @@ fun Product(product: Result) {
                         modifier = Modifier.padding(2.dp),
                         text = "Envio gratis",
                         fontSize = 12.sp,
-                        color = App_green,
+                        color = Tertiary,
                     )
                 }
             }
@@ -174,7 +174,7 @@ fun Product(product: Result) {
                             .fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
-                        Box(modifier = Modifier.fillMaxWidth(0.5f)){
+                        Box(modifier = Modifier.fillMaxWidth(0.5f)) {
                             Text(
                                 modifier = Modifier,
                                 fontWeight = FontWeight.SemiBold,
@@ -182,9 +182,10 @@ fun Product(product: Result) {
                                 overflow = TextOverflow.Clip,
                             )
                         }
-                        Box(modifier = Modifier.fillMaxWidth(0.9f),
+                        Box(
+                            modifier = Modifier.fillMaxWidth(0.9f),
                             contentAlignment = Alignment.CenterEnd
-                            ) {
+                        ) {
                             Text(
                                 overflow = TextOverflow.Ellipsis,
                                 text = attribute.value_name

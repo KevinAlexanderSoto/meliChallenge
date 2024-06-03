@@ -56,7 +56,7 @@ fun KalexSearchBar(
     onSearchClicked: () -> Unit = {},
     onTextChange: (String) -> Unit = {},
 ) {
-    var text by rememberSaveable { mutableStateOf(" ") }
+    var text by rememberSaveable { mutableStateOf("") }
     Row(
         modifier = Modifier
             .height(height)

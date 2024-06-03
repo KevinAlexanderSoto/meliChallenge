@@ -20,8 +20,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.kalex.melichallenge.ui.theme.App_green
 import com.kalex.melichallenge.ui.theme.MeliChallengeTheme
+import com.kalex.melichallenge.ui.theme.Tertiary
 
 /**
  * @author kevin Alexander Soto on 6/1/2024
@@ -85,7 +85,7 @@ fun SearchResultItem(
                                 modifier = Modifier.padding(2.dp),
                                 text = "Envio gratis",
                                 fontSize = 11.sp,
-                                color = App_green,
+                                color = Tertiary,
                             )
                         }
                     }
@@ -95,7 +95,7 @@ fun SearchResultItem(
                                 modifier = Modifier.padding(2.dp),
                                 text = "Mercado Pago",
                                 fontSize = 11.sp,
-                                color = App_green,
+                                color = Tertiary,
                             )
                         }
                     }

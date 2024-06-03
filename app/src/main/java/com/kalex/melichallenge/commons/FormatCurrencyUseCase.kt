@@ -4,6 +4,11 @@ import java.text.NumberFormat
 import java.util.Currency
 
 /**
+ * The FormatCurrencyUseCase object provides a utility function to format a given value in a specified currency.
+ * Returns a string representation of the formatted value, including the currency symbol.
+ * @param currency: The currency code (e.g., "USD", "EUR", "JPY", etc.). Defaults to "USD" if not provided.
+ * @param value: The value to be formatted. Defaults to 0.0 if not provided.
+ * @throws if an exception occurs during the formatting process, the method returns an empty string (" ").
  * @author kevin Alexander Soto on 6/2/2024
  * **/
 object FormatCurrencyUseCase {

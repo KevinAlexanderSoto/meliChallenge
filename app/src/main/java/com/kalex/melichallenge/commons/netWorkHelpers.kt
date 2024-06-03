@@ -6,9 +6,9 @@ import retrofit2.HttpException
 import java.net.UnknownHostException
 
 /**
+ * In summary, this function wraps a suspend function into a flow that emits FlowStatus objects, handling different types of exceptions and emitting error messages accordingly.
  * @author kevin Alexander Soto on 6/1/2024
  * **/
-
 fun <T> makeNetworkCallHandler(
     call: suspend () -> T,
 ) = flow<FlowStatus<T>> {
@@ -28,4 +28,5 @@ fun <T> makeNetworkCallHandler(
         emit(FlowStatus.Error(ErrorType.UNKNOWN_ERROR))
     }
 }
+
 

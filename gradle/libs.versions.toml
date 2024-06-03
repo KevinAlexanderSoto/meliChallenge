@@ -13,6 +13,7 @@ composeBom = "2024.05.00"
 gson = "2.10.1"
 koinAndroid = "3.5.3"
 mockk = "1.13.11"
+mockkAndroid = "1.13.11"
 retrofit = "2.9.0"
 coilCompose = "2.4.0"
 kotlinx-coroutines-core = "1.7.3"
@@ -46,6 +47,7 @@ kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-t
 
 kotlinx-coroutines-test-jvm = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test-jvm", version.ref = "kotlinxCoroutinesTestJvm" }
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockkAndroid" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinAndroid" }

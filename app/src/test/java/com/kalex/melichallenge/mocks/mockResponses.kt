@@ -1,6 +1,9 @@
 package com.kalex.melichallenge.mocks
 
+import com.kalex.melichallenge.search.model.dto.Paging
 import com.kalex.melichallenge.search.model.dto.Result
+import com.kalex.melichallenge.search.model.dto.SearchResponse
+import com.kalex.melichallenge.search.model.dto.Sort
 
 /**
  * @author kevin Alexander Soto on 6/2/2024
@@ -42,4 +45,14 @@ val mockResult =  Result(
     variation_id = "",
     variations_data = null,  // Can be null if not applicable
     winner_item_id = null  // Can be any type, set to null if not available
+)
+val mockSearchResponse = SearchResponse(
+    available_sorts = listOf(),
+    country_default_time_zone = "America/Argentina/Buenos_Aires",
+    filters = listOf(),
+    paging = Paging(total = 100, offset = 0, limit = 50, primary_results = 2),
+    query = "smartphones",
+    results = listOf(mockResult),
+    site_id = "MLA",
+    sort = Sort("relevance", "Default")
 )

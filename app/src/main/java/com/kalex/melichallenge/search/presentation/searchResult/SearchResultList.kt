@@ -33,7 +33,7 @@ fun SearchResultList(
         modifier = Modifier.fillMaxSize()
     ) {
         response?.forEach { product ->
-            item {
+            item(key = product.id) {
                 Column(
                     modifier = Modifier.fillMaxSize()
                 ) {
@@ -61,5 +61,4 @@ fun SearchResultList(
             }
         }
     }
-
 }

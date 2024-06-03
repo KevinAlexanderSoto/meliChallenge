@@ -80,8 +80,8 @@ fun ProductDetailScreen(
     ) { paddingValues ->
         Column(
             modifier = Modifier
-                .verticalScroll(rememberScrollState())
                 .padding(paddingValues)
+                .verticalScroll(rememberScrollState())
                 .fillMaxSize()
         ) {
             if (product != null) {
@@ -114,10 +114,12 @@ fun Product(product: Result) {
             contentScale = ContentScale.FillBounds,
         )
 
-        Row( modifier = Modifier
-            .padding(12.dp)
-            .fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween){
+        Row(
+            modifier = Modifier
+                .padding(12.dp)
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
             Text(
                 text = FormatCurrencyUseCase.format(
                     value = product.price,
@@ -133,11 +135,13 @@ fun Product(product: Result) {
                 overflow = TextOverflow.Ellipsis
             )
         }
-        Row( modifier = Modifier
-            .padding(6.dp)
-            .fillMaxWidth(),
-            horizontalArrangement = Arrangement.spacedBy(12.dp)){
-        Text(text = "${product.available_quantity} disponibles", fontSize = 14.sp)
+        Row(
+            modifier = Modifier
+                .padding(6.dp)
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            Text(text = "${product.available_quantity} disponibles", fontSize = 14.sp)
             product.shipping?.let {
                 AnimatedVisibility(visible = it.free_shipping) {
                     Text(
@@ -170,14 +174,22 @@ fun Product(product: Result) {
                             .fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
-                        Text(
-                            fontWeight = FontWeight.SemiBold,
-                            text = attribute.name + ":"
-                        )
-                        Text(
-                            overflow = TextOverflow.Ellipsis,
-                            text = attribute.value_name
-                        )
+                        Box(modifier = Modifier.fillMaxWidth(0.5f)){
+                            Text(
+                                modifier = Modifier,
+                                fontWeight = FontWeight.SemiBold,
+                                text = attribute.name + ":",
+                                overflow = TextOverflow.Clip,
+                            )
+                        }
+                        Box(modifier = Modifier.fillMaxWidth(0.9f),
+                            contentAlignment = Alignment.CenterEnd
+                            ) {
+                            Text(
+                                overflow = TextOverflow.Ellipsis,
+                                text = attribute.value_name
+                            )
+                        }
                     }
                 }
             }

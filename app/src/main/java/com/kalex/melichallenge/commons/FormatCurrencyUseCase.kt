@@ -9,10 +9,14 @@ import java.util.Currency
 object FormatCurrencyUseCase {
 
     fun format(currency: String = "USD", value: Double = 0.0): String {
+        try {
         val format: NumberFormat = NumberFormat.getCurrencyInstance()
         format.maximumFractionDigits = 3
         format.currency = Currency.getInstance(currency)
 
         return format.format(value)
+        } catch (e: Exception){
+            return " "
+        }
     }
 }

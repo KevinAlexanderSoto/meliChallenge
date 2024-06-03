@@ -17,8 +17,9 @@ fun NavGraphBuilder.productsNavigationGraph(rootNavController: NavHostController
         startDestination = Router.PRODUCT_DETAIL_SCREEN
     ) {
         composable(route = Router.PRODUCT_DETAIL_SCREEN) {
-            ProductDetailScreen()
+            ProductDetailScreen() {
+                rootNavController.navigateUp()
+            }
         }
-
     }
 }

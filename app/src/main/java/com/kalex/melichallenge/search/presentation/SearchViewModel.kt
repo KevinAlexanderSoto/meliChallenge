@@ -28,12 +28,8 @@ class SearchViewModel(
     val searchState: StateFlow<ViewModelUiState<List<Result>>>
         get() = _searchState
 
-    //first state whether the search is happening or not
-    private val _isSearching = MutableStateFlow(false)
-    val isSearching = _isSearching.asStateFlow()
-
     //second state the text typed by the user
-    private val _searchText = MutableStateFlow("Consulta un producto")
+    private val _searchText = MutableStateFlow(" ")
     val searchText = _searchText.asStateFlow()
     fun searchProduct(query: String = " ") {
         viewModelScope.launch(dispatcher) {
@@ -53,10 +49,8 @@ class SearchViewModel(
 
         }
     }
-
     fun onSearchTextChange(text: String) {
         _searchText.value = text
     }
-
 
 }

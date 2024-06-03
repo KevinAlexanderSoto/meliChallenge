@@ -1,7 +1,6 @@
 package com.kalex.melichallenge.commons
 
 
-import android.util.Log
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 import java.net.UnknownHostException
@@ -26,7 +25,6 @@ fun <T> makeNetworkCallHandler(
         }
         emit(FlowStatus.Error(errorMessage))
     } catch (e: Exception) {
-        Log.e("KALEX", e.toString())
         emit(FlowStatus.Error(ErrorType.UNKNOWN_ERROR))
     }
 }

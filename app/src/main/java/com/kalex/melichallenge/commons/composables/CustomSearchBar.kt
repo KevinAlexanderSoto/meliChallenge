@@ -23,7 +23,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -56,7 +56,7 @@ fun KalexSearchBar(
     onSearchClicked: () -> Unit = {},
     onTextChange: (String) -> Unit = {},
 ) {
-    var text by remember { mutableStateOf(TextFieldValue()) }
+    var text by rememberSaveable { mutableStateOf(" ") }
     Row(
         modifier = Modifier
             .height(height)
@@ -73,7 +73,7 @@ fun KalexSearchBar(
             value = text,
             onValueChange = {
                 text = it
-                onTextChange(it.text)
+                onTextChange(it)
             },
             enabled = isEnabled,
             textStyle = TextStyle(
@@ -82,7 +82,7 @@ fun KalexSearchBar(
                 fontWeight = FontWeight.Bold
             ),
             decorationBox = { innerTextField ->
-                if (text.text.isEmpty()) {
+                if (text.isEmpty()) {
                     Text(
                         text = hint,
                         color = Color.Gray.copy(alpha = 0.5f),
@@ -105,13 +105,13 @@ fun KalexSearchBar(
                 .size(40.dp)
                 .background(color = Color.Transparent, shape = CircleShape)
                 .clickable {
-                    if (text.text.isNotEmpty()) {
-                        text = TextFieldValue(text = "")
+                    if (text.isNotEmpty()) {
+                        text = ""
                         onTextChange("")
                     }
                 },
         ) {
-            if (text.text.isNotEmpty()) {
+            if (text.isNotEmpty()) {
                 Icon(
                     modifier = modifier
                         .fillMaxSize()

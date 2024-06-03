@@ -49,7 +49,7 @@ fun SearchMainScreen(
             )
             Icon(
                 imageVector = Icons.Default.Search,
-                contentDescription = "No subject Icon",
+                contentDescription = " ",
                 modifier = Modifier.size(80.dp).padding(0.dp,12.dp),
             )
             Text(

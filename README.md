@@ -18,7 +18,8 @@ El repo cuenta con 3 ramas, main, mainCompose, mainXml. **mainXml** es el mismo 
 ## Arquitectura
 Se usa la Arquitectura **MVVM** , se usa una pequena variante que prioriza la modularizacion por feature.
 
-![image](https://user-images.githubusercontent.com/86072587/225817080-03a37836-7eaa-4e41-838d-613232c4b69b.png)
+![image](![image](https://github.com/KevinAlexanderSoto/meliChallenge/assets/86072587/5a9189e5-dd72-47e9-8f11-9e918e709ed3)
+)
 
 
 ## Testing

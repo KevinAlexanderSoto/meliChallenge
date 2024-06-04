@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/SearchMainFragment">
+
+    <fragment
+        android:id="@+id/SearchMainFragment"
+        android:name="com.kalex.melichallenge.search.presentation.searchMain.SearchMainFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_search_main">
+
+        <action
+            android:id="@+id/action_SearchMainFragment_to_SearchResultFragment"
+            app:destination="@id/SearchResultFragment" >
+            <argument
+                android:name="query"
+                android:defaultValue=" "
+                app:argType="string"
+                app:nullable="false" />
+            </action>
+    </fragment>
+    <fragment
+        android:id="@+id/SearchResultFragment"
+        android:name="com.kalex.melichallenge.search.presentation.searchResult.xml.SearchResultFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_search_result">
+        <argument
+            android:name="query"
+            android:defaultValue=" "
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/SearchMainFragment" />
+        <action
+            android:id="@+id/action_SearchResultFragment_to_ProductDetailFragment"
+            app:destination="@id/ProductDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ProductDetailFragment"
+        android:name="com.kalex.melichallenge.products.ProductDetailFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_product_detail">
+
+        <action
+            android:id="@+id/action_ProductDetailFragment_to_SearchResultFragment"
+            app:destination="@id/SearchResultFragment" />
+    </fragment>
+</navigation>

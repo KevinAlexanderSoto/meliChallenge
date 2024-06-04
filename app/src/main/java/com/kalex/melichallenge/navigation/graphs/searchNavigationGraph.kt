@@ -9,7 +9,7 @@ import androidx.navigation.navArgument
 import androidx.navigation.navigation
 import com.kalex.melichallenge.navigation.Router
 import com.kalex.melichallenge.search.presentation.searchMain.SearchMainScreen
-import com.kalex.melichallenge.search.presentation.searchResult.SearchResultScreen
+import com.kalex.melichallenge.search.presentation.searchResult.compose.SearchResultScreen
 
 /**
  * @author kevin Alexander Soto on 6/1/2024

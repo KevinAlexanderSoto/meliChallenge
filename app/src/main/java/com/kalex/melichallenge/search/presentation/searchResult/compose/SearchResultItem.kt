@@ -1,4 +1,4 @@
-package com.kalex.melichallenge.search.presentation.searchResult
+package com.kalex.melichallenge.search.presentation.searchResult.compose
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.clickable

@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.androidx.navigation.safeargs)
+    id ("kotlin-kapt")
 }
 
 android {
@@ -38,6 +40,7 @@ android {
     }
     buildFeatures {
         compose = true
+        viewBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -48,7 +51,6 @@ android {
         }
     }
 }
-
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -68,6 +70,10 @@ dependencies {
     // Koin section
     implementation (libs.koin.android)
     implementation (libs.koin.androidx.compose)
+    implementation("io.insert-koin:koin-androidx-navigation:3.5.3")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
+    implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
+
     // Coroutines
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
@@ -79,8 +85,18 @@ dependencies {
     //coil
     implementation(libs.coil.compose)
     implementation(libs.coil)
+
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.lifecycle.runtime.compose.android)
+    implementation(libs.material)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+
+    implementation("com.airbnb.android:epoxy:5.1.4")
+    // Add the annotation processor if you are using Epoxy's annotations (recommended)
+    kapt("com.airbnb.android:epoxy-processor:5.1.4")
 
     testImplementation(libs.junit)
     testImplementation(libs.mockk)

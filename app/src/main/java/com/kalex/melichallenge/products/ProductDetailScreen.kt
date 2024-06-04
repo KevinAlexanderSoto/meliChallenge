@@ -54,31 +54,12 @@ fun ProductDetailScreen(
     navigationViewModel: NavigationViewModel = koinViewModel(
         viewModelStoreOwner = LocalContext.current as ComponentActivity
     ),
-    onBackNavigation: () -> Unit,
 ) {
     val product: Result? = remember {
         navigationViewModel.getActualProduct()
     }
 
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = { Text(text = stringResource(R.string.product_detail_topBar_title)) },
-                navigationIcon = {
-                    IconButton(
-                        onClick = {
-                            onBackNavigation()
-                        },
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.ArrowBack,
-                            contentDescription = "go back",
-                        )
-                    }
-                },
-            )
-        },
-    ) { paddingValues ->
+    Scaffold() { paddingValues ->
         Column(
             modifier = Modifier
                 .padding(paddingValues)

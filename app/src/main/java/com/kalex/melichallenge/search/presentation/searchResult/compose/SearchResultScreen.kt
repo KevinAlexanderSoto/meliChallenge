@@ -1,4 +1,4 @@
-package com.kalex.melichallenge.search.presentation.searchResult
+package com.kalex.melichallenge.search.presentation.searchResult.compose
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding

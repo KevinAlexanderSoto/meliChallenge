@@ -5,4 +5,12 @@
     <string name="search_result_unknown_error">Algo raro paso, intentalo otra vez</string>
     <string name="search_result_topBar_title">Busqueda</string>
     <string name="product_detail_topBar_title"> </string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Buscar</string>
+    <string name="second_fragment_label"> </string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
